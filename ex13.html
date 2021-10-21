@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Ex 13</title>
+        <style>
+            p{
+                line-height: 0.1;
+            }
+        </style>
+        <script lang="javascript">
+            function enviarDados()
+            {
+                var lado1, lado2, lado3;
+
+                lado1 = parseFloat(document.frm.lado1.value);
+                lado2 = parseFloat(document.frm.lado2.value);
+                lado3 = parseFloat(document.frm.lado3.value);
+
+                
+
+                if (lado2 + lado3 > lado1 && lado1 + lado3 > lado2 && lado1 + lado2 > lado3)
+                {               
+                    if (lado1 == lado2 && lado2 == lado3) 
+                    {
+                        document.getElementById("Saida").innerHTML = "O triangulo é equilatero";
+                        document.getElementById("Saida1").innerHTML = "<pre>      *</pre>";
+                        document.getElementById("Saida2").innerHTML = "<pre>     * *</pre>";
+                        document.getElementById("Saida3").innerHTML = "<pre>    *   *</pre>";
+                        document.getElementById("Saida4").innerHTML = "<pre>   *     *</pre>";
+                        document.getElementById("Saida5").innerHTML = "<pre>  *       *</pre>";
+                        document.getElementById("Saida6").innerHTML = "<pre> ***********</pre>";
+                    }
+
+
+                    else if (lado1 == lado2 || lado2 == lado3 || lado1 == lado3)
+                    {
+                        document.getElementById("Saida").innerHTML ="O triângulo é isósceles.";
+                        document.getElementById("Saida1").innerHTML ="<pre>    *</pre>";
+                        document.getElementById("Saida2").innerHTML ="<pre>   * *</pre>";
+                        document.getElementById("Saida3").innerHTML ="<pre>  *   *</pre>";
+                        document.getElementById("Saida4").innerHTML ="<pre> *     *</pre>";
+                        document.getElementById("Saida5").innerHTML ="<pre> *     *</pre>";
+                        document.getElementById("Saida6").innerHTML ="<pre> *******</pre>";
+                    }
+                        
+                    else 
+                    {
+                        document.getElementById("Saida").innerHTML ="O triângulo é escaleno.";
+                        document.getElementById("Saida1").innerHTML = "<pre>     **</pre>";
+                        document.getElementById("Saida2").innerHTML = "<pre>    *   *</pre>";
+                        document.getElementById("Saida3").innerHTML = "<pre>   *      *</pre>";
+                        document.getElementById("Saida4").innerHTML = "<pre>  *         *</pre>";
+                        document.getElementById("Saida5").innerHTML = "<pre> *            *</pre>";
+                        document.getElementById("Saida6").innerHTML = "<pre>****************</pre>";
+                    }
+                        
+                }
+                else 
+                {
+                    document.getElementById("Saida").innerHTML ="Essa medidas não formam um triângulo";
+                }
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <form name="frm">
+            A medida do 1º lado: <input type="text" name="lado1" ><br>
+            A medida do 2º lado: <input type="text" name="lado2" ><br>
+            A medida do 3º lado: <input type="text" name="lado3" ><br>
+            <input type="button" value="Enviar" onclick="enviarDados();">
+            <br>
+        </form>
+
+        <!--<input type="text" name="Saida" size="30" readonly>-->
+        <p id="Saida" ></p>
+        <p id="Saida1"></p>
+        <p id="Saida2"></p>
+        <p id="Saida3"></p>
+        <p id="Saida4"></p>
+        <p id="Saida5"></p>
+        <p id="Saida6"></p>
+
+
+        
+    </body>
+</html>
